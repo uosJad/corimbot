@@ -1,0 +1,38 @@
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.once('ready', () => {
+    console.log('Ready!');
+});
+
+client.on('message', message => {
+    if (message.content === '!ping') {
+        message.channel.send('Pong.');
+    }
+    else if (message.content === '!thanos') {
+        const quotes = [
+            'You could not live with your own failure. And where did that bring you? Back to me.',
+            'I am inevitable.',
+            'You should have gone for the head.',
+            'Perfectly balanced, as all things should be.',
+            'Today I have lost more than you could ever know.',
+            'This day extracts a heavy toll.',
+            "You're not the only one cursed with knowledge.",
+            'The hardest choices require the strongest wills.'];
+        const msgIdx = Math.floor(Math.random() * (quotes.length));
+        console.log('Thanos Quote: ' + msgIdx);
+        message.channel.send(quotes[msgIdx]);
+    }
+    else if (message.content === '!win') {
+        message.channel.send('I see this as an absolute win!');
+    }
+    else if (message.content === '!flip') {
+        message.channel.send("I'm flipping a coin...");
+    }
+    else if (message.content === '!p') {
+        message.channel.send("Penis");
+    }
+});
+
+client.login(token);
+
