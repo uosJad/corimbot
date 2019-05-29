@@ -15,6 +15,7 @@
   "description": "A simple Discord bot",
   "dependencies": {
     "discord.js": "^11.5.0",
+    "request": "2.88.0",
     "eslint": "^5.16.0"
   }
 }
