@@ -1,4 +1,5 @@
 # corimbot
+Corimbot is a Discord bot that I work on in my free time, or while procrastinating on other, more urgent assignments.
 ## Commands
 - !ping - Corimbot will respond with "Pong."
 - !thanos - Corimbot will respond with a Thanos quote randomly selected from an array.
