@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
   "description": "A simple Discord bot",
   "dependencies": {
     "discord.js": "^11.5.0",
+    "request": "2.88.0",
     "eslint": "^5.16.0"
   }
 }
