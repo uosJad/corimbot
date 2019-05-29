@@ -1,15 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const { prefix, token } = require('./config.json');
 
 client.once('ready', () => {
     console.log('Ready!');
 });
 
 client.on('message', message => {
-    if (message.content === '!ping') {
+    if (message.content === `${prefix} ping`) {
         message.channel.send('Pong.');
     }
-    else if (message.content === '!thanos') {
+    else if (message.content === `${prefix} thanos`) {
         // TODO: Pull from thanosquotes.txt instead of this stupid array
         const quotes = [
             'You could not live with your own failure. And where did that bring you? Back to me.',
@@ -24,10 +25,10 @@ client.on('message', message => {
         console.log('Thanos Quote: ' + msgIdx);
         message.channel.send(quotes[msgIdx]);
     }
-    else if (message.content === '!win') {
+    else if (message.content === `${prefix} win`) {
         message.channel.send('I see this as an absolute win!');
     }
-    else if (message.content === '!flip') {
+    else if (message.content === `${prefix} flip`) {
         message.channel.send("I'm flipping a coin...");
         const coinSide = Math.floor(Math.random() * 2);
         if (coinSide === 0) {
@@ -36,7 +37,7 @@ client.on('message', message => {
             message.channel.send("Looks like it's tails!");
         }
     }
-    else if (message.content === '!p') {
+    else if (message.content === `${prefix} p`) {
         // TODO: Delete this
         message.channel.send("Penis");
     }
