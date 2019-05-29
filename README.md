@@ -1,5 +1,5 @@
 # About
-Corimbot is a Discord bot that I work on in my free time, or while procrastinating on other, more urgent assignments.
+Corimbot is a Discord bot that I work on in my free time, or while procrastinating on other, more urgent tasks.
 ## Commands
 All Corimbot commands use the "!corim" prefix.
 - !corim ping - Corimbot will respond with "Pong."
