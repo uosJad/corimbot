@@ -2,6 +2,20 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "!corim";
 
+/**
+ * Mixes the contents of the passed array randomly
+ * 
+ * @param {*} arr Array to be mixed
+ */
+function mixArray(arr) {
+    for (i = 0; i < arr.length; i++) {
+        //get random index from 0-length
+        randomIndex = Math.floor(Math.random() * Math.floor(arr.length));
+        //swap
+        [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]];
+    }
+}
+
 client.once('ready', () => {
     console.log('Ready!');
 });
@@ -51,6 +65,17 @@ client.on('message', message => {
         message.channel.send("gigagamer" + gamerNum);
     }
 
+    else if (message.content === `${prefix} snap`) {
+        //get list of users in guild
+        const users = message.guild.members.array();
+        const userDisplayNames = Array.from(users, x => x.displayName);
+
+        //randomize, split, and print
+        mixArray(userDisplayNames);
+        const userDisplayNames2 = userDisplayNames.splice(0, users.length/2);
+        message.channel.send("```fix\r\n Snapped: " + userDisplayNames2.join(", ") + "\r\n```");
+        message.channel.send("```css\r\n Survived: " + userDisplayNames.join(", ") + "\r\n```");
+    }
     // TODO: implement randomping
 });
 
