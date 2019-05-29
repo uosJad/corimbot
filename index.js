@@ -6,6 +6,8 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
+client.user.setActivity("shidding and farding");
+
 client.on('message', message => {
     if (message.content === `${prefix} ping`) {
         message.channel.send('Pong.');
@@ -41,6 +43,11 @@ client.on('message', message => {
         // TODO: Delete this
         message.channel.send("Penis");
     }
+    else if (message.content === `${prefix} gigagamer`) {
+        const gamerNum = Math.floor(Math.random() * 101);
+        message.channel.send("gigagamer" + gamerNum);
+    }
+    // TODO: implement randomping
 });
 
 client.login(token);
