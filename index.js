@@ -10,6 +10,7 @@ client.on('message', message => {
         message.channel.send('Pong.');
     }
     else if (message.content === '!thanos') {
+        // TODO: Pull from thanosquotes.txt instead of this stupid array
         const quotes = [
             'You could not live with your own failure. And where did that bring you? Back to me.',
             'I am inevitable.',
@@ -28,8 +29,15 @@ client.on('message', message => {
     }
     else if (message.content === '!flip') {
         message.channel.send("I'm flipping a coin...");
+        const coinSide = Math.floor(Math.random() * 2);
+        if (coinSide === 0) {
+            message.channel.send("The coin landed on heads!");
+        } else {
+            message.channel.send("Looks like it's tails!");
+        }
     }
     else if (message.content === '!p') {
+        // TODO: Delete this
         message.channel.send("Penis");
     }
 });
