@@ -6,8 +6,6 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
-client.user.setActivity("shidding and farding");
-
 client.on('message', message => {
     if (message.content === `${prefix} ping`) {
         message.channel.send('Pong.');
