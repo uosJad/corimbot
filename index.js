@@ -10,6 +10,7 @@ client.on('message', message => {
     if (message.content === `${prefix} ping`) {
         message.channel.send('Pong.');
     }
+
     else if (message.content === `${prefix} thanos`) {
         // TODO: Pull from thanosquotes.txt instead of this stupid array
         const quotes = [
@@ -25,9 +26,11 @@ client.on('message', message => {
         console.log('Thanos Quote: ' + msgIdx);
         message.channel.send(quotes[msgIdx]);
     }
+
     else if (message.content === `${prefix} win`) {
         message.channel.send('I see this as an absolute win!');
     }
+
     else if (message.content === `${prefix} flip`) {
         message.channel.send("I'm flipping a coin...");
         const coinSide = Math.floor(Math.random() * 2);
@@ -37,14 +40,17 @@ client.on('message', message => {
             message.channel.send("Looks like it's tails!");
         }
     }
+
     else if (message.content === `${prefix} p`) {
         // TODO: Delete this
         message.channel.send("Penis");
     }
+
     else if (message.content === `${prefix} gigagamer`) {
         const gamerNum = Math.floor(Math.random() * 101);
         message.channel.send("gigagamer" + gamerNum);
     }
+
     // TODO: implement randomping
 });
 
